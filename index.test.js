@@ -8,7 +8,17 @@ describe('[Exercise 1] trimProperties', () => {
     const actual = utils.trimProperties(input)
     expect(actual).toEqual(expected)
   })
-  // test('[2] returns a copy, leaving the original object intact', () => {})
+  test('[2] returns a copy, leaving the original object intact', () => {
+    let input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expectedCopy = { foo: 'foo', bar: 'bar', baz: 'baz' }
+
+    const copy = utils.trimProperties(input)
+
+    expect(input).toEqual(expected)
+    expect(copy).toEqual(expectedCopy)
+
+  })
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
@@ -22,9 +32,9 @@ describe('[Exercise 3] findLargestInteger', () => {
 
 describe('[Exercise 4] Counter', () => {
   let counter
-  beforeEach(() => {
-    counter = new utils.Counter(3) // each test must start with a fresh couter
-  })
+  // beforeEach(() => {
+  //   counter = new utils.Counter(3) // each test must start with a fresh couter
+  // })
   // test('[6] the FIRST CALL of counter.countDown returns the initial count', () => {})
   // test('[7] the SECOND CALL of counter.countDown returns the initial count minus one', () => {})
   // test('[8] the count eventually reaches zero but does not go below zero', () => {})
@@ -32,9 +42,9 @@ describe('[Exercise 4] Counter', () => {
 
 describe('[Exercise 5] Seasons', () => {
   let seasons
-  beforeEach(() => {
-    seasons = new utils.Seasons() // each test must start with fresh seasons
-  })
+  // beforeEach(() => {
+  //   seasons = new utils.Seasons() // each test must start with fresh seasons
+  // })
   // test('[9] the FIRST call of seasons.next returns "summer"', () => {})
   // test('[10] the SECOND call of seasons.next returns "fall"', () => {})
   // test('[11] the THIRD call of seasons.next returns "winter"', () => {})
@@ -45,9 +55,9 @@ describe('[Exercise 5] Seasons', () => {
 
 describe('[Exercise 6] Car', () => {
   let focus
-  beforeEach(() => {
-    focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
-  })
+  // beforeEach(() => {
+  //   focus = new utils.Car('focus', 20, 30) // each test must start with a fresh car
+  // })
   // test('[15] driving the car returns the updated odometer', () => {})
   // test('[16] driving the car uses gas', () => {})
   // test('[17] refueling allows to keep driving', () => {})
