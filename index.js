@@ -168,8 +168,7 @@ class Car {
    */
   refuel(gallons) {
     // ✨ implement
-    const gas = this.tank + gallons
-    if (gas > this.tankSize) {
+    if (this.tank + gallons > this.tankSize) {
       this.tank = this.tankSize
       return (this.tank*this.mpg)
     } else {
