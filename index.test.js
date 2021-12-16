@@ -22,12 +22,33 @@ describe('[Exercise 1] trimProperties', () => {
 })
 
 describe('[Exercise 2] trimPropertiesMutation', () => {
-  // test('[3] returns an object with the properties trimmed', () => {})
-  // test('[4] the object returned is the exact same one we passed in', () => {})
+  test('[3] returns an object with the properties trimmed', () => {
+    const input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+
+    utils.trimPropertiesMutation(input)
+    expect(input).toEqual(expected)
+  })
+  test('[4] the object returned is the exact same one we passed in', () => {
+    let input = { foo: '  foo ', bar: 'bar ', baz: ' baz' }
+    const expected = { foo: 'foo', bar: 'bar', baz: 'baz' }
+
+    expect(utils.trimPropertiesMutation(input)).not.toBe(expected)
+    expect(utils.trimPropertiesMutation(input)).toBe(input)
+  })
 })
 
 describe('[Exercise 3] findLargestInteger', () => {
-  // test('[5] returns the largest number in an array of objects { integer: 2 }', () => {})
+  test('[5] returns the largest number in an array of objects { integer: 2 }', () => {
+    
+    const integers = [
+      { integer: 3 },
+      { integer: 4 },
+      { integer: 5 }
+    ]
+    
+    expect(utils.findLargestInteger(integers)).toBe(5)
+  })
 })
 
 describe('[Exercise 4] Counter', () => {
