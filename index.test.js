@@ -165,9 +165,13 @@ describe('[Exercise 6] Car', () => {
 
 describe('[Exercise 7] isEvenNumberAsync', () => {
   test('[19] resolves true if passed an even number', () => {
-    
+    return utils.isEvenNumberAsync(4).then(res => {
+      expect(res).toEqual(true)
+    })
   })
   test('[20] resolves false if passed an odd number', () => {
-    
+    return utils.isEvenNumberAsync(5).then(res => {
+      expect(res).toEqual(false)
+    })
   })
 })
